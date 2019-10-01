@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <table class="table table-bordered table-striped">
+    <thead  class="table-info">
+      <td><b>Title</b></td>
+      <td><b>Url</b></td>
+      <td><b>Created_at</b></td>
+      <td><b>Author</b></td>
+      <td><b>Select</b></td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataList">
+        <td>{{data.title}}</td>
+        <td>{{data.url}}</td>
+        <td>{{data.created_at}}</td>
+        <td>{{data.author}}</td>
+        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"(click)="edit(data)">Click</button></td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+            <div class="modal-body">
+              <p> <b>Url:</b>  {{model.url}}</p>
+              <p><b>Author:</b> {{model.author}}</p>
+              <p><b>Created_at:</b> {{model.created_at}}</p>
+              <p><b>Title: </b>{{model.title}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
